@@ -27,27 +27,30 @@ a{
 }
 
 /* FONT STYLES */
+
 h1{
     font-size:6rem;
     font-weight:300;
 }
+
 h2{
     font-size:2rem;
     font-weight:300;
 }
+
 h3{
     font-size:5.5rem;
     font-weight:500;
     text-align: center;
     display:block;
-    color:#2B2A2F;
-    /* background-color: rgb(255, 169, 56); */
+    color:white;
 }
 
 h4{
     font-size:2.5rem;
     font-weight:400;
 }
+
 p{
     font-size:1.8rem;
     font-weight:300;
@@ -71,17 +74,12 @@ p{
 
 header{
     background-image:linear-gradient(to top,#2B2A2F,rgb(255, 169, 56));
-    /* background-image:radial-gradient(rgb(255, 169, 56),#2B2A2F); */
     position:relative;
     height:100vh;
     width:100vw;
     background-position:top;
     background-size:cover;
     max-width:100%;
-}
-
-section h3 {
-    padding: 3rem;
 }
 
 .nav-container{
@@ -148,17 +146,13 @@ nav ul{
     font-weight:300;
 }
 
-/* RESUME STYLES */
-
-.about-section {
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
+/* GENERAL CONTAINER STYLES */
 
 .wrapper-container{
     padding:3rem;
     width:100vw;
     background-color:#2B2A2F;
+    padding-top:10rem;
     max-width:100%;
 }
 
@@ -167,6 +161,28 @@ nav ul{
     margin:0 auto;
     padding:1rem;
 }
+
+.section-title{
+    z-index:0;
+    position:absolute;
+    text-transform:uppercase;
+    top:-15%;
+    left:-7%;
+    color:rgba(255, 255, 255, 0.185);
+    font-size:20rem;
+    pointer-events:none;
+}
+
+/* ABOUT */
+
+.about-container {
+    position:relative;
+    padding:6rem;
+    border:1px solid red;
+    height:100vh;
+}
+
+/* PROJECT */
 
 .project-module{
     z-index:1;
@@ -177,12 +193,14 @@ nav ul{
     padding:1rem;
     background:#1e1d20;
     margin-bottom: 4rem;
-    border: 1px solid rgba(255, 255, 255, 0.247);
+    /* border: 1px solid rgba(255, 255, 255, 0.247); */
+    border: 1px solid rgba(255, 204, 36, 0.589);
     transition:all 300ms;
 }
 
 .project-module:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
+    /* filter:drop-shadow(0.02rem 0.02rem 5px rgba(255, 204, 36, 0.589)); */
     filter:drop-shadow(0.02rem 0.02rem 5px black);
 }
 
@@ -200,22 +218,10 @@ nav ul{
 }
 
 .project-text{
-    margin-left:1rem;
-    margin-top:1rem;
+    padding:1rem;
     justify-content:center;
 }
  
-#projects{
-    z-index:0;
-    position:absolute;
-    text-transform:uppercase;
-    top:-15%;
-    left:-7%;
-    color:rgba(255, 255, 255, 0.185);
-    font-size:20rem;
-    /* user-select: none; */
-    pointer-events:none;
-}
 
 .project-text h4{
     font-weight:900;
@@ -234,7 +240,7 @@ nav ul{
 
 .project-text a{
     font-size:7rem;
-    color:white;
+    color:rgba(255, 255, 255, 0.432);
     transition:color 300ms;
     font-weight:300;
     align-self:center;
@@ -252,32 +258,15 @@ nav ul{
     filter:hue-rotate(180deg);
 }
 
-.projects-section {
+.projects-container {
     height: 100vh;
     position:relative;
 }
 
-/* .education-module .banner{
-    position:absolute;
-    top:10%;
-    left:-5%;
-    background-color:dodgerblue;
-    width:10rem;
-    height:4rem;
+/* RESUME */
+
+.resume-container{
+    position:relative;
+    height:100vh;
+    border:1px solid red;
 }
-
-.education-module .banner-depth{
-    position:absolute;
-    top:100%;
-    left:0%;
-    height:100%;
-    width:100%;
-    background-color:rgb(16, 70, 124);
-    clip-path:polygon(0 0, 30% 0, 30% 30%);
-
-
-    <div class="banner">
-        <div class="banner-depth"></div>
-        <p>Monkey</p>
-    </div>
-} */
