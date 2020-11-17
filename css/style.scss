@@ -108,18 +108,25 @@ header {
     border: 1px solid white;
     animation-name: opacityFade;
     animation-duration: 1s;
+    width:30vw;
     ul {
       display: flex;
       list-style-type: none;
-      li a {
-        display: inline-block;
-        color: white;
-        font-size: 2.5rem;
-        padding: 1.2rem 4rem;
-        font-weight: 300;
-        transition: color 300ms;
-        background-color: $light-grey;
-        @include default-hover();
+      width:auto;
+      li{
+        text-align:center; 
+        width:calc(100% / 3);
+        a {
+          display: inline-block;
+          width:100%;
+          color: white;
+          font-size: 2.5rem;
+          padding:1rem 0;
+          font-weight: 300;
+          transition: color 300ms;
+          background-color: $light-grey;
+          @include default-hover();
+        }
       }
     }
   }
@@ -320,6 +327,10 @@ h3.section-title {
     text-align: center;
     font-size: 2rem;
     margin-top: 1rem;
+    transition:color 300ms;
+    &:hover{
+      color:$accent-orange;
+    }
   }
   .resume-module {
     border-bottom: 1px solid rgba(grey, 0.4);
