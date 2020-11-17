@@ -1,94 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>theme-two</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <div class="title-container">
-            <img class="headshot-img" src="assets/john.jpg"> 
-            <h1>Johnny Sins</h1>
-            <h2>Web Developer</h2>
-            <!-- <a class="resume-button" href="#">View Resume</a> -->
-            <!-- <div class="specialization">"Everyone is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid." ~ Albert Einstein<div> -->
-        </div>
-        <div class="nav-container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#projects">
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#resume">
-                            Resume
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about">
-                            About
-                        </a>
-                    </li>
-                </ul>
-            </nav> 
-        </div>
-    </header>
-    <div class="wrapper-container">
-        <div class="wrapper">
-            <main>
-                <div class="projects-container">
-                    <section class="projects-flex">
-                        <h3 id="projects" class="section-title">Projects</h3>
-                        <div class="project-module">
-                            <div class="project-image">
-                                <img src="./assets/800px-React-icon.svg.png">
-                            </div>
-                            <div class="project-text">
-                                <h4>Project #1</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium suscipit nulla doloremque distinctio iusto eligendi aut beatae quia! Ea ut unde quae, quibusdam distinctio est molestiae architecto dolore recusandae ipsum.</p>
-                                <a href="#"><ion-icon name="logo-github"></ion-icon></a>
-                            </div>
-                        </div>
-                        <div class="project-module">
-                            <div class="project-image" >
-                                <img src="./assets/1200px-Visual_Studio_Code_1.35_icon.svg.png" style="transform: scale(0.6);">
-                            </div>
-                            <div class="project-text">
-                                <h4>Project #2</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium suscipit nulla doloremque distinctio iusto eligendi aut beatae quia! Ea ut unde quae, quibusdam distinctio est molestiae architecto dolore recusandae ipsum.</p>
-                                <a href="#"><ion-icon name="logo-github"></ion-icon></a>
-                            </div>
-                        </div>
-                        <div class="project-module">
-                            <div class="project-image" >
-                                <img src="./assets/1200px-Visual_Studio_Code_1.35_icon.svg.png" style="transform: scale(0.6);">
-                            </div>
-                            <div class="project-text">
-                                <h4>Project #3</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium suscipit nulla doloremque distinctio iusto eligendi aut beatae quia! Ea ut unde quae, quibusdam distinctio est molestiae architecto dolore recusandae ipsum.</p>
-                                <a href="#"><ion-icon name="logo-github"></ion-icon></a>
-                            </div> 
-                        </div>
-                    </section>
-                </div>
-                <section class="resume-container">
-                    <h3 id="resume" class="section-title">Resume</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium suscipit nulla doloremque distinctio iusto eligendi aut beatae quia! Ea ut unde quae, quibusdam distinctio est molestiae architecto dolore recusandae ipsum.</p>
-                </section>
-                <section class="about-container">
-                    <h3 id="about" class="section-title">About</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium suscipit nulla doloremque distinctio iusto eligendi aut beatae quia! Ea ut unde quae, quibusdam distinctio est molestiae architecto dolore recusandae ipsum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum quod cupiditate natus ea placeat blanditiis nihil dolor sapiente aliquam. Aperiam provident dolor sed sunt unde laboriosam sequi laborum ratione soluta!</p>
-                </section>
-            </main>
-        </div>
-    </div>
-    <footer>
 
-    </footer>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>theme-two</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- <img class="header-background" src="./assets/new_bg.jpg" /> -->
+    <div class="title-container">
+      <img class="headshot-img" src="assets/john.jpg" />
+      <div>
+        <h1>Conor Roberts</h1>
+        <h2>Computer Science Student & Web Developer</h2>
+      </div>
+      <ul class="socials-container">
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/conorjroberts/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="#">
+            <ion-icon name="logo-github">https://github.com/ConorRoberts/</ion-icon>
+          </a>
+        </li>
+      </ul>
+      <div class="email-container">
+        <a href="mailto:conor@conorroberts.com" target="_blank">
+          <i class="fas fa-envelope"></i>
+          conor@conorroberts.com
+        </a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="#projects"> Projects </a>
+        </li>
+        <li>
+          <a href="#experience"> Experience </a>
+        </li>
+        <li>
+          <a href="#about"> About </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h3 id="about" class="section-title">About</h3>
+      <div class="about-container">
+        <div class="about-bio">
+          <p>
+            Current student pursuing a Bachelor's of Computer Science at the University of Guelph (2023). Strong
+            knowledge of Java, JavaScript, and HTML/CSS.
+          </p>
+        </div>
+        <ul class="skills">
+          <li>
+            <p>HTML & CSS</p>
+            <div class="bar">
+              <div></div>
+              <p>95%</p>
+            </div>
+          </li>
+          <li>
+            <p>JavaScript</p>
+            <div class="bar">
+              <div></div>
+              <p>90%</p>
+            </div>
+          </li>
+          <li>
+            <p>React (JavaScript)</p>
+            <div class="bar">
+              <div></div>
+              <p>70%</p>
+            </div>
+          </li>
+          <li>
+            <p>Communication</p>
+            <div class="bar">
+              <div></div>
+              <p>85%</p>
+            </div>
+          </li>
+          <li>
+            <p>Team Leadership</p>
+            <div class="bar">
+              <div></div>
+              <p>90%</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="projects-container">
+      <h3 id="projects" class="section-title">Projects</h3>
+      <div class="projects-flex">
+        <div class="project-module">
+          <div class="project-image-container">
+            <img class="project-image" src="./assets/java.jpg" />
+          </div>
+          <div class="project-text">
+            <h4>Text Adventure Game (Java)</h4>
+            <p>
+              Project created for CIS2430 at University of Guelph.
+            </p>
+            <div class="project-link-container">
+              <a target="_blank" href="https://github.com/ConorRoberts/AdventureGame">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-module">
+          <div class="project-image-container">
+            <img class="project-image" src="./assets/c-logo.png" />
+          </div>
+          <div class="project-text">
+            <h4>Automated Caesar Cipher (C)</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ducimus!
+            </p>
+            <div class="project-link-container">
+              <a target="_blank" href="#">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-module">
+          <div class="project-image-container">
+            <img class="project-image" src="./assets/react.png" />
+          </div>
+          <div class="project-text">
+            <h4>Campus Connect (JavaScript, React)</h4>
+            <p>
+              Group chats for courses. Built using firebase, react, and html/css. <a
+                href="https://conorroberts.com/campus-connect/">https://conorroberts.com/campus-connect/</a>
+            </p>
+            <div class="project-link-container">
+              <a target="_blank" href="#">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-module">
+          <div class="project-image-container">
+            <img class="project-image" src="./assets/thyra_gray.png" />
+          </div>
+          <div class="project-text">
+            <h4>ThyraGray.com</h4>
+            <p>
+              <a target="_blank" href="https://thyragray.com/"">https://thyragray.com/</a> Portfolio website for one of my friends.
+              </p>
+              <div class=" project-link-container">
+                <a target="_blank" href="#">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section>
+      <h3 id="experience" class="section-title">Experience</h3>
+      <div class="resume-container">
+        <div class="resume-module">
+          <div class="resume-module-header">
+            <h4>Bike Taxi Operator</h4>
+            <p>Summer 2019</p>
+          </div>
+          <p>
+            Provided entertaining open-air transportation between events, hotels and local points of interest in downtown Toronto. Acquired customers amongst fierce competition, negotiated rates and conducted service safely and professionally.
+          </p>
+        </div>
+        <div class="resume-module">
+          <div class="resume-module-header">
+            <h4>Teacher's Assistant</h4>
+            <p>February - March 2019</p>
+          </div>
+          <p>
+            Assisted students at Blyth Academy Lawrence Park (Toronto) with various coding tasks within their computer science curriculum. Taught students basic coding concepts with Python.
+          </p>
+        </div>
+        <div class="resume-module">
+          <div class="resume-module-header">
+            <h4>Professional Esports Player</h4>
+            <p>June 2015 - May 2019</p>
+          </div>
+          <p>
+            Professional <a href="https://www.smitegame.com/" target="_blank">Smite</a> player. Worked with various teams to compete in the Smite Pro League. Developed skills such as team leadership, initiative, and a strong sense of communication.
+          </p>
+        </div>
+        <p class="resume-link">
+          <a target="_blank" href="https://drive.google.com/file/d/1QndFnE_myk1ms0xAul3HX1mDJRN5UnPk/view">Download Resume</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+  <script src="https://kit.fontawesome.com/cc360a8001.js" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
