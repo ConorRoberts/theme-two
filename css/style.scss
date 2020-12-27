@@ -1,13 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-$background-main: #2b2a30;
-// $background-main: white;
-$light-grey: rgba(121, 121, 121, 0.637);
-$accent-orange: rgb(255, 169, 56);
+$background-color: #2b2a30;
+// $background-color: #dfdfdf;
+// $background-color: #f8f8ff;
+$light-grey: rgba(165, 165, 165, 0.459);
+
+$background-light:#f8f8ff;
+
+$accent-orange: rgb(178, 183, 212);
+$hover-color: rgb(170, 181, 253);
+$accent-color: rgb(182, 214, 255);
 $default-shadow: 0 0 10px black;
 @mixin default-hover() {
+  // transition:color 300ms;
+  transition-duration: 300ms;
   &:hover {
-    color: $accent-orange;
+    color: $hover-color;
   }
 }
 
@@ -69,19 +77,27 @@ p {
 
 header {
   height: 100vh;
-  background:linear-gradient(to bottom, dodgerblue,$background-main);
+  // background: radial-gradient(
+  //   $background-color 0%,
+  //   $accent-color 10%,
+  //   $accent-color 100%
+  // );
+  background:$accent-color;
   background-size: cover;
   max-width: 100%;
   overflow: hidden;
-  .header-background {
-    width: 100%;
-    position: fixed;
-    z-index: -1;
+  @mixin header-hover(){
+    transition: color 300ms;
+    &:hover{
+      color:$accent-color;
+    }
   }
-  .email-container{
-    font-size:3rem;
-    ion-icon{
-      font-size:4rem;
+  .email-container {
+    font-size: 3rem;
+    margin-top: 2rem;
+    color:white;
+    a{
+      @include header-hover();
     }
   }
   .socials-container {
@@ -92,40 +108,43 @@ header {
     margin-top: 2rem;
     li {
       a {
-        transition: color 300ms;
+        // transition: background-color 300ms;
         color: white;
         font-size: 5rem;
-        @include default-hover();
+        padding:0.5rem;
+        @include header-hover();
       }
     }
   }
   nav {
     position: absolute;
-    bottom: 0;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 10rem;
+    // margin-bottom: 10rem;
     border: 1px solid white;
     animation-name: opacityFade;
     animation-duration: 1s;
-    width:30vw;
+    width: 35vw;
     ul {
       display: flex;
       list-style-type: none;
-      width:auto;
-      li{
-        text-align:center; 
-        width:calc(100% / 3);
+      width: auto;
+      li {
+        text-align: center;
+        width: calc(100% / 3);
         a {
           display: inline-block;
-          width:100%;
+          width: 100%;
           color: white;
           font-size: 2.5rem;
-          padding:1rem 0;
+          padding: 1rem 0;
           font-weight: 300;
-          transition: color 300ms;
           background-color: $light-grey;
-          @include default-hover();
+          transition: background-color 300ms;
+          &:hover{
+            background-color:$accent-color;
+          }
         }
       }
     }
@@ -142,9 +161,27 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 8rem;
+    padding: 7rem 10rem;
     background-color: $light-grey;
     box-shadow: $default-shadow;
+    .headshot-img-container{
+      $size:15vw;
+      height:$size;
+      width:$size;
+      overflow:hidden;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      border: 2px solid white;
+
+      .headshot-img {
+        width:100%;
+        // transform: scale(.8);
+      }
+    }
+
+    a{
+      color:white;
+    }
 
     div {
       display: flex;
@@ -153,43 +190,29 @@ header {
     }
   }
 
-  a{
-    color:white;
-    transition:color 300ms;
-    &:hover{
-      color:$accent-orange;
-    }
-  }
-  .headshot-img {
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    transform: scale(1);
-    border: 2px solid white;
-  }
 }
 
 main {
-  // box-shadow: 0 -3px 10px black;
+  box-shadow: 0 -3px 10px black;
   z-index: 10;
   padding: 3rem;
-  background-color: $background-main;
+  background-color: $background-color;
   padding-top: 4rem;
   max-width: 100%;
   section {
     width: 70%;
     margin: 8vh auto;
   }
-}
-
-h3.section-title {
-  z-index: 0;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.397);
-  pointer-events: none;
+  h3.section-title {
+    z-index: 0;
+    text-transform: uppercase;
+    color: rgba(83, 83, 83, 0.616);
+    // color: rgba(255, 255, 255, 0.397);
+  }
 }
 
 .about-container {
-  background-color: white;
+  background-color: $background-light;
   padding: 2rem;
   display: flex;
   flex: 1;
@@ -234,7 +257,7 @@ h3.section-title {
           height: 0.8rem;
           margin-right: 2rem;
           border-radius: 1px;
-          background-color: $accent-orange;
+          background-color: $accent-color;
         }
       }
     }
@@ -253,13 +276,15 @@ h3.section-title {
     align-items: center;
     max-width: 45%;
     height: 25vh;
-    color: white;
+    color: black;
     padding: 1rem;
     transition: transform 150ms;
     margin: 0.5rem;
+    // filter:blur(10px);
 
     // Border properties
-    background: #1e1d20;
+    // background: #1e1d20;
+    background: #f8f8ff;
     border: 2px solid transparent;
     border-image: linear-gradient(
       to bottom right,
@@ -281,11 +306,12 @@ h3.section-title {
       width: 60%;
       margin-left: 1rem;
       h4 {
-        font-weight: 900;
-        color: rgb(255, 169, 56);
+        font-weight: 700;
+        text-align:center;
+        color:black;
       }
       a {
-        color: $accent-orange;
+        color: $accent-color;
       }
       .project-link-container {
         text-align: center;
@@ -293,14 +319,13 @@ h3.section-title {
         a {
           display: inline-block;
           font-size: 5.5rem;
-          color: rgba(255, 255, 255, 0.432);
+          color: rgba(0, 0, 0, 0.815);
           transition: color 300ms;
           font-weight: 300;
           text-align: center;
           padding: 1rem;
-          &:hover {
-            color: rgb(255, 169, 56);
-          }
+          transition-property:color;
+          @include default-hover();
         }
       }
     }
@@ -322,14 +347,17 @@ h3.section-title {
 .resume-container {
   box-shadow: $default-shadow;
   padding: 3rem;
-  width:100%;
+  width: 100%;
+  background-color: $background-light;
   .resume-link {
     text-align: center;
     font-size: 2rem;
     margin-top: 1rem;
-    transition:color 300ms;
-    &:hover{
-      color:$accent-orange;
+    text-decoration: none;
+    a {
+      transition: color 300ms;
+      color: black;
+      @include default-hover();
     }
   }
   .resume-module {
@@ -342,9 +370,9 @@ h3.section-title {
     .resume-module-header {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 1.5rem;
     }
   }
-  background-color: white;
 }
 
 @media (max-width: 1000px) {
@@ -358,52 +386,53 @@ h3.section-title {
       top: 0;
       left: 50%;
       background-color: rgba($accent-orange, 0.4);
-      h1{
-        font-size:3rem;
+      h1 {
+        font-size: 3rem;
+      }
+      text-align:center;
+      .headshot-img-container{
+        width:50vw;
+        height:50vw;
       }
     }
-    .email-container{
-      font-size:2rem;
+    .email-container {
+      font-size: 2rem;
     }
-    nav{
-      position:static;
-      width:100%;
-      margin:0;
-      transform:none;
-      ul{
-        width:100%;
-        transform:none;
-        li{
-          width:calc(100% / 3);
-          text-align:center;
-          a{
-            padding:1rem 0;
-            font-size:1.5rem;
-            width:100%;
+    nav {
+      position: static;
+      width: 100%;
+      margin: 0;
+      transform: none;
+      ul {
+        width: 100%;
+        transform: none;
+        li {
+          a {
+            font-size: 1.5rem;
           }
         }
       }
     }
   }
   main {
-    h3.section-title{
-      font-size:3.5rem;
+    h3.section-title {
+      font-size: 3.5rem;
     }
-    height:auto;
+    height: auto;
     position: static;
     margin: 0;
     padding: 2rem 0;
     section {
-      padding:1rem;
-      margin:0;
-      width:100%;
+      padding: 1rem;
+      margin: 0;
+      width: 100%;
     }
   }
 
-  .about-container{
-    flex-direction:column;
-    .skills{
-      border-left:none;
+  .about-container {
+    flex-direction: column;
+    .skills {
+      border-left: none;
       border-top: 1px solid rgba(172, 172, 172, 0.445);
     }
   }
@@ -418,34 +447,31 @@ h3.section-title {
       flex-direction: column;
       width: 90%;
       .project-module {
-        flex-direction:column;
-        overflow:hidden;
-        height:auto;
+        flex-direction: column;
+        overflow: hidden;
+        height: auto;
         max-width: 100%;
-        .project-image-container,.project-text{
-          width:100%;
+        .project-image-container,
+        .project-text {
+          width: 100%;
         }
       }
     }
   }
 
-  .headshot-img {
-    max-width: 45%;
-  }
-
-  .resume-container{
-    padding:1.5rem;
-    .resume-module{
-      padding:1.5rem;
-      .resume-module-header{
-        flex-direction:column;
-        justify-content:flex-start;
-        align-items:center;
-        text-align:center;
-        margin-bottom:1rem;
+  .resume-container {
+    padding: 1.5rem;
+    .resume-module {
+      padding: 1.5rem;
+      .resume-module-header {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
       }
-      p{
-        text-align:justify;
+      p {
+        text-align: justify;
       }
     }
   }
